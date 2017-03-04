@@ -7,7 +7,7 @@
 
 *Thank you for downloaded my plugin. If you have any questions that are beyond the scope of this help file, please feel free to email via my [email](mailto:eugen.guriev@lolitaframework.com). Thanks so much!*
 
-Plugin for adding live editting functionality to the wordpress site. This plugin will help you to edit your content without having to go to the admin panel.
+Plugin for adding live editing functionality to the wordpress site. This plugin will help you to edit your content without having to go to the admin panel.
 
 
 ## Development team
