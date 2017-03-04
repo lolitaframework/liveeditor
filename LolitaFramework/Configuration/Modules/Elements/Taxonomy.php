@@ -294,7 +294,7 @@ class Taxonomy
                 'show_ui'           => true,
                 'show_admin_column' => true,
                 'query_var'         => true,
-                'rewrite'           => array('slug' => $this->post_type_slug),
+                'rewrite'           => array('slug' => $this->slug . "_tax"),
             ),
             $args
         );

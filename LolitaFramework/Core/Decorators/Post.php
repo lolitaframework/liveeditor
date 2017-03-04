@@ -183,7 +183,11 @@ class Post
      */
     public $filter;
 
-    public $data;
+    /**
+     * Saved comments array
+     * @var null
+     */
+    public $comments = null;
 
     /**
      * Cached Img object
@@ -227,6 +231,40 @@ class Post
         }
 
         return new Post($_post);
+    }
+
+    /**
+     * Get posts
+     *
+     * @param  array  $args
+     * @return array
+     */
+    public static function posts(array $args = array())
+    {
+        return self::sanitize(get_posts($args));
+    }
+
+    /**
+     * Sanitize post / posts
+     *
+     * @param  mixed $data
+     * @return mixed
+     */
+    public static function sanitize($data)
+    {
+        if ($data instanceof self) {
+            return $data;
+        }
+        if ($data instanceof WP_Post) {
+            return new self($data);
+        }
+
+        if (is_array($data)) {
+            foreach ($data as &$el) {
+                $el = self::sanitize($el);
+            }
+        }
+        return $data;
     }
 
     /**
@@ -336,7 +374,22 @@ class Post
                 $term_class_objects[ $taxonomy ] = $terms;
             }
         }
+        foreach ($term_class_objects as &$t) {
+            $t = Term::getInstance($t->term_id);
+        }
         return $term_class_objects;
+    }
+
+    /**
+     * Set terms
+     *
+     * @param string | array  $terms List of terms. Can be an array or a comma separated string.
+     * @param string  $taxonomy Possible values for example: 'category', 'post_tag', 'taxonomy slug'
+     * @param boolean $append   If true, tags will be appended to the post. If false, tags will replace existing tags.
+     */
+    public function setTerms($terms, $taxonomy, $append = false)
+    {
+        return wp_set_post_terms($this->ID, $terms, $taxonomy, $append);
     }
 
     /**
@@ -424,6 +477,9 @@ class Post
         if (null === $this->img) {
             $tid = get_post_thumbnail_id($this->ID);
             $this->img = new Img((int) $tid);
+        }
+        if (wp_attachment_is_image($this->ID)) {
+            $this->img = new Img((int) $this->ID);
         }
         return $this->img;
     }
@@ -538,6 +594,35 @@ class Post
             return true;
         }
         return false;
+    }
+
+    /**
+     * Get post comments
+     *
+     * @return array
+     */
+    public function comments()
+    {
+        if (null === $this->comments) {
+            $comment_args = array(
+                'post_id' => $this->ID,
+                'orderby' => 'comment_date_gmt',
+                'order'   => 'ASC',
+                'status'  => 'approve',
+                'parent'  => 0,
+            );
+
+            if (is_user_logged_in()) {
+                $comment_args['include_unapproved'] = get_current_user_id();
+            } else {
+                $commenter = wp_get_current_commenter();
+                if ($commenter['comment_author_email']) {
+                    $comment_args['include_unapproved'] = $commenter['comment_author_email'];
+                }
+            }
+            $this->comments = Comment::sanitize(get_comments($comment_args));
+        }
+        return $this->comments;
     }
 
     /**

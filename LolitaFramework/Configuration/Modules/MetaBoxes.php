@@ -126,11 +126,12 @@ class MetaBoxes implements IModule
                 // ==============================================================
                 // Fill new attributes
                 // ==============================================================
+                $attributes = $control->getAttributes();
                 $control->setAttributes(
                     array_merge(
                         $control->getAttributes(),
                         array(
-                            'class' => 'widefat',
+                            'class' => 'widefat ' . Arr::get($attributes, 'class'),
                             'id'    => $control->getID(),
                         )
                     )
@@ -186,19 +187,21 @@ class MetaBoxes implements IModule
         if (!isset($_POST[self::NONCE]) || !wp_verify_nonce($_POST[self::NONCE], self::NONCE)) {
             return;
         }
-        if (!current_user_can('edit_posts')) {
-            return;
-        }
         if (!is_object($post)) {
             $post = get_post();
         }
 
         foreach ($this->data as $slug => $data) {
-            $this->toggleSave($slug, $post_id);
+            if ($data['screen'] !== $post->post_type) {
+                continue;
+            }
+            if ($this->checkCondition($data)) {
+                $this->toggleSave($slug, $post_id);
 
-            if (array_key_exists('controls', $data)) {
-                foreach ($data['controls'] as $arguments) {
-                    $this->toggleSave($arguments['name'], $post_id);
+                if (array_key_exists('controls', $data)) {
+                    foreach ($data['controls'] as $arguments) {
+                        $this->toggleSave($arguments['name'], $post_id);
+                    }
                 }
             }
         }
@@ -231,16 +234,32 @@ class MetaBoxes implements IModule
     public function addMetaBoxes()
     {
         foreach ($this->data as $slug => $data) {
-            add_meta_box(
-                $slug,
-                $data['title'],
-                $data['callback'],
-                $data['screen'],
-                $data['context'],
-                $data['priority'],
-                $data['callback_args']
-            );
+            if ($this->checkCondition($data)) {
+                add_meta_box(
+                    $slug,
+                    $data['title'],
+                    $data['callback'],
+                    $data['screen'],
+                    $data['context'],
+                    $data['priority'],
+                    $data['callback_args']
+                );
+            }
         }
+    }
+
+    /**
+     * Check condition
+     *
+     * @param  array $data
+     * @return bool
+     */
+    public function checkCondition(array $data)
+    {
+        if (array_key_exists('condition', $data) && is_callable($data['condition'])) {
+            return $data['condition']();
+        }
+        return true;
     }
 
     /**

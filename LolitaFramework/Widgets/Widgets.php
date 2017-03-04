@@ -88,7 +88,7 @@ class Widgets
     {
         return apply_filters(
             'lf_widgets_settings_path',
-            dirname(LolitaFramework::dir()) . '/app' . DS . 'widgets' . DS
+            Loc::lolita()->baseDir() . '/app' . DS . 'widgets' . DS
         );
     }
 

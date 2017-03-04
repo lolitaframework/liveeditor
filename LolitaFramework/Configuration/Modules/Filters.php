@@ -27,7 +27,7 @@ class Filters implements IModule
      * @author Guriev Eugen <gurievcreative@gmail.com>
      * @return Filters instance.
      */
-    private function install()
+    protected function install()
     {
         foreach ($this->data as $data) {
             add_filter($data[0], $data[1], $data[2], $data[3]);
@@ -41,7 +41,7 @@ class Filters implements IModule
      * @author Guriev Eugen <gurievcreative@gmail.com>
      * @return Filters instance.
      */
-    private function prepare()
+    protected function prepare()
     {
         foreach ($this->data as &$data) {
             // Priority

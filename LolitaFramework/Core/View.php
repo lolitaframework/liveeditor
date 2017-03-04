@@ -2,6 +2,7 @@
 namespace liveeditor\LolitaFramework\Core;
 
 use \liveeditor\LolitaFramework;
+use \Exception;
 
 class View
 {
@@ -14,6 +15,9 @@ class View
      */
     public static function isHaveExtension($path)
     {
+        if (!is_string($path)) {
+            return false;
+        }
         $parts = pathinfo($path);
         return array_key_exists('extension', $parts);
     }
@@ -28,8 +32,28 @@ class View
     {
         return apply_filters(
             'lf_default_views_folder',
-            LolitaFramework::baseDir() . DS . 'app' . DS . 'views' . DS
+            Loc::lolita()->baseDir() . DS . 'app' . DS . 'views' . DS
         );
+    }
+
+    /**
+     * Get default view folder path
+     *
+     * @param  string $path
+     * @return string
+     */
+    public static function path($path)
+    {
+        if (!is_string($path)) {
+            throw new Exception('Wrong path: ' . print_r($path, true));
+        }
+        $path = (string) $path;
+        // If path setted like this "someview" then
+        // We need add default folder path and extension .php
+        if (!self::isHaveExtension($path)) {
+            $path = self::getDefaultFolder() . $path . '.php';
+        }
+        return $path;
     }
 
     /**
@@ -42,12 +66,9 @@ class View
      */
     public static function make($path, array $data = array())
     {
+        $path = self::path($path);
         $data = array_merge($data, Loc::helpers());
-        // If path setted like this "someview" then
-        // We need add default folder path and extension .php
-        if (!self::isHaveExtension($path)) {
-            $path = self::getDefaultFolder() . $path . '.php';
-        }
+        
         // Add parameters to temporary query variable.
         $data['__View'] = new self;
 

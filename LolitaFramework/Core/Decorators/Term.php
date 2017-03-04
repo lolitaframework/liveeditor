@@ -3,7 +3,9 @@
 namespace liveeditor\LolitaFramework\Core\Decorators;
 
 use \liveeditor\LolitaFramework\Core\Str;
+use \liveeditor\LolitaFramework\Core\Arr;
 use \Exception;
+use \WP_Term;
 
 class Term
 {
@@ -273,7 +275,6 @@ class Term
         if (property_exists($this, $key)) {
             return $this->{$key};
         }
-
         return get_term_meta($this->term_id, $key, true);
     }
 
@@ -297,11 +298,7 @@ class Term
     public static function termsToQuery(array $terms = array(), $relation = 'OR')
     {
         $query  = array();
-        $by_tax = array();
-
-        foreach ($terms as $term) {
-            $by_tax[ $term->taxonomy ][] = $term->term_id;
-        }
+        $by_tax = Arr::pluck($terms, 'term_id', 'taxonomy');
 
         foreach ($by_tax as $tax => $terms) {
             $query[] = array(
@@ -312,5 +309,39 @@ class Term
         }
         $query['relation'] = $relation;
         return $query;
+    }
+
+    /**
+     * Sanitize post / posts
+     *
+     * @param  mixed $data
+     * @return mixed
+     */
+    public static function sanitize($data)
+    {
+        if ($data instanceof Term) {
+            return $data;
+        }
+        if ($data instanceof WP_Term) {
+            return new Term($data);
+        }
+
+        if (is_array($data)) {
+            foreach ($data as &$el) {
+                $el = self::sanitize($el);
+            }
+        }
+        return $data;
+    }
+
+    /**
+     * Is term
+     *
+     * @param  mixed  $obj
+     * @return boolean
+     */
+    public static function is($obj)
+    {
+        return ($obj instanceof WP_Term) || ($obj instanceof self);
     }
 }
