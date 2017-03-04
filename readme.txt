@@ -1,5 +1,5 @@
 === Live Editor ===
-Tags: live editor, live, edit, editor, lolitaframework, lolita framework, ajax, noreload, fast, nice
+Tags: live editor, live, edit, editor, lolitaframework, lolita framework, ajax, noreload, fast, nice, fontend editor
 Requires at least: 3.7
 Tested up to: 4.7.2
 Stable tag: 3.3
