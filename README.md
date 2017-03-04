@@ -1,5 +1,8 @@
 ![Live Editor](/promo/banner-1544x500.png)
 # Live Editor – Wordpress Plugin
+
+[![Build Status](https://travis-ci.org/lolitaframework/liveeditor.svg?branch=master)](https://travis-ci.org/lolitaframework/liveeditor)
+
 **If you have an open vacancy for me, please feel free to email [with me](mailto:eugen.guriev@lolitaframework.com).**
 
 *Thank you for downloaded my plugin. If you have any questions that are beyond the scope of this help file, please feel free to email via my [email](mailto:eugen.guriev@lolitaframework.com). Thanks so much!*

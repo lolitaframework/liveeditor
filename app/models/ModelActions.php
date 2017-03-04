@@ -52,28 +52,28 @@ class ModelActions
                         'href'  => '#popup_dat_and_time',
                         'meta'  => array( 'class' => 'date hide open-popup-link' ),
                     ),
-                    array(
-                        'id'    => 'tags',
-                        'title' => View::make(
-                            'toolbar_node',
-                            array(
-                                'title' => __('Tags', 'liveeditor'),
-                            )
-                        ),
-                        'href'  => '#popup_tags',
-                        'meta'  => array( 'class' => 'hide open-popup-link' ),
-                    ),
-                    array(
-                        'id'    => 'categories',
-                        'title' => View::make(
-                            'toolbar_node',
-                            array(
-                                'title' => __('Categories', 'liveeditor'),
-                            )
-                        ),
-                        'href'  => '#popup_categories',
-                        'meta'  => array( 'class' => 'hide open-popup-link' ),
-                    ),
+                    // array(
+                    //     'id'    => 'tags',
+                    //     'title' => View::make(
+                    //         'toolbar_node',
+                    //         array(
+                    //             'title' => __('Tags', 'liveeditor'),
+                    //         )
+                    //     ),
+                    //     'href'  => '#popup_tags',
+                    //     'meta'  => array( 'class' => 'hide open-popup-link' ),
+                    // ),
+                    // array(
+                    //     'id'    => 'categories',
+                    //     'title' => View::make(
+                    //         'toolbar_node',
+                    //         array(
+                    //             'title' => __('Categories', 'liveeditor'),
+                    //         )
+                    //     ),
+                    //     'href'  => '#popup_categories',
+                    //     'meta'  => array( 'class' => 'hide open-popup-link' ),
+                    // ),
                     array(
                         'id'    => 'remove',
                         'title' => View::make(

@@ -78,31 +78,4 @@
     </div>
 </div>
 
-<div id="popup_categories" class="white-popup media-modal wp-core-ui mfp-hide">
-    <button type="button" class="mfp-clost button-link media-modal-close">
-        <span class="media-modal-icon">
-            <span class="screen-reader-text"><?php _e('Close', 'liveeditor') ?></span>
-        </span>
-    </button>
-    <div class="media-modal-content">
-        <div class="media-frame mode-select wp-core-ui hide-menu" id="__wp-uploader-id-0">
-            <div class="media-frame-menu">
-                <div class="media-menu"><a href="#" class="media-menu-item active"><?php _e('Categories', 'liveeditor') ?></a></div>
-            </div>
-            <div class="media-frame-title"> <h1><?php _e('Categories', 'liveeditor') ?><span class="dashicons dashicons-arrow-down"></span></h1> </div>
-            <div class="media-frame-content">
-               
 
-            </div>
-            <div class="media-frame-toolbar">
-                <div class="media-toolbar">
-                    <div class="media-toolbar-secondary"></div>
-                    <div class="media-toolbar-primary search-form">
-                        <button id="button_date_close" type="button" class="mfp-clost button media-button button-large"><?php _e('Close', 'liveeditor') ?></button>
-                        <button id="button_date_save" type="button" class="button media-button button-primary button-large"><?php _e('Save', 'liveeditor') ?></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
