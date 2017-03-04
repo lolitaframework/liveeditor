@@ -1,7 +1,13 @@
-![Live Editor](/promo/banner-1544x500.png)
-# Live Editor – Wordpress Plugin
+=== Live Editor ===
+Tags: live editor, live, edit, editor, lolitaframework, lolita framework, ajax, noreload, fast, nice
+Requires at least: 3.7
+Tested up to: 4.7.2
+Stable tag: 3.3
+License: MIT
 
-[![Build Status](https://travis-ci.org/lolitaframework/liveeditor.svg?branch=master)](https://travis-ci.org/lolitaframework/liveeditor)
+Plugin for adding live editting functionality to the wordpress site.
+
+== Description ==
 
 **If you have an open vacancy for me, please feel free to email [with me](mailto:eugen.guriev@lolitaframework.com).**
 
@@ -9,12 +15,11 @@
 
 Plugin for adding live editting functionality to the wordpress site. This plugin will help you to edit your content without having to go to the admin panel.
 
-
-## Development team
+**Development team**
 
 The plugin was created by [Guriev Eugen](mailto:eugen.guriev@lolitaframework.com), who continues to lead the development.
 
-## Contributing
+**Contributing**
 
 Any help is appreciated. The project is open-source and we encourage you to participate. You can contribute to the project in multiple ways by:
 
@@ -25,7 +30,7 @@ Any help is appreciated. The project is open-source and we encourage you to part
 * Following us on Twitter
 * Sharing the project around your community
 
-## Links
+**Links**
 
 * [Repository](https://github.com/lolitaframework/liveeditor)
 * [Loliat Framework](http://lolitaframework.com)
@@ -34,51 +39,49 @@ Any help is appreciated. The project is open-source and we encourage you to part
 * [LinkedIn](https://www.linkedin.com/in/eugen-gurev-17231497/)
 * [Email](mailto:eugen.guriev@lolitaframework.com)
 
-## Getting Started
+
+== Installation ==
+
 To get started, just install the included plugin in your downloaded file from envato market.
 
 1. Take a cup of coffee
 2. Log in your wordpress site as admin
 3. Goto Plugins > Install > Upload Plugin
-4. Browse your downloaded file and select plugin.zip
+4. Browse your downloaded file and select liveeditor.zip
 5. Upload and activate!
 6. Finish, you can use the plugin immediately!
 
 *Ohh... The cup is still full... It's so fast to make the plugin ready to use.*
 
-## Editin your content with Live Editor is so easy
+== Screenshots ==
+**Editin your content with Live Editor is so easy**
 * Goto your WordPress website from admin or editor account
 * Switch "Edit mode" button from off to on. 
-![Edit mode](/promo/edit_mode.png)
 * Voilà. Now you can edit your content on frontend side.
 
 **How to edit the content:**
-
 * Click on title or content
 * Edit something
 * Done
-![How to edit the content](/promo/content.gif)
 
 **How to edit the featured image:**
-
 * Click on title or content
 * Click on "Featured image" button.
 * Change, remove your image.
 * Done
-![How to edit the featured image](/promo/featured_image.gif)
 
 **How to remove post:**
-
 * Click on title or content
 * Click on "Remove" button.
 * Done
-![How to remove post](/promo/remove.gif)
 
 **How to edit post date:**
-
 * Click on title or content
 * Click on "Date" button.
 * Edit
 * Save
-![How to edit post date](/promo/date.gif)
 
+== Changelog ==
+
+= 1.0 =
+First commit
