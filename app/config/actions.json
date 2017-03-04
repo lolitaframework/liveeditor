@@ -1,0 +1,10 @@
+[
+    ["admin_bar_menu", ["\\liveeditor\\ModelActions", "createSwitcher"], 999],
+    ["wp_ajax_save_title", ["\\LiveEditor\\ModelActions", "savePost"]],
+    ["wp_ajax_save_content", ["\\LiveEditor\\ModelActions", "savePost"]],
+    ["wp_ajax_save_date", ["\\LiveEditor\\ModelActions", "savePost"]],
+    ["wp_ajax_remove_post", ["\\LiveEditor\\ModelActions", "removePost"]],
+    ["wp_ajax_update_featured_image", ["\\LiveEditor\\ModelActions", "updateFeaturedImage"]],
+    ["wp_footer", ["\\LiveEditor\\ModelActions", "addToolBar"]],
+    ["wp_enqueue_scripts", "wp_enqueue_media"]
+]

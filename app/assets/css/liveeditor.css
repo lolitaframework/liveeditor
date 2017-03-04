@@ -1,0 +1,157 @@
+.lf-progress {
+  position: fixed;
+  display: block;
+  top: 0;
+  width: 0%;
+  height: 3px;
+  left: 0;
+  right: 0;
+  background: #5DB0C6;
+  z-index: 100000;
+  box-shadow: 0 0 30px #5DB0C6;
+  -webkit-transition: width 1s;
+  transition: width 1s; }
+
+@media screen and (max-width: 782px) {
+  #wpadminbar li#wp-admin-bar-edit_mode,
+  #wpadminbar li#wp-admin-bar-featured_image,
+  #wpadminbar li#wp-admin-bar-remove,
+  #wpadminbar li#wp-admin-bar-date,
+  #wpadminbar li#wp-admin-bar-tags,
+  #wpadminbar li#wp-admin-bar-categories {
+    display: block; } }
+#wpadminbar #wp-admin-bar-edit_mode .ab-icon:before {
+  content: '\f204';
+  font-family: 'FontAwesome' !important; }
+
+#wpadminbar #wp-admin-bar-edit_mode.on .ab-icon:before {
+  content: '\f205'; }
+
+#wp-admin-bar-featured_image .ab-icon:before {
+  content: '\f306';
+  top: 3px; }
+
+#wp-admin-bar-remove .ab-icon:before {
+  content: '\f335';
+  top: 3px; }
+
+#wp-admin-bar-date .ab-icon:before {
+  content: "\f508";
+  top: 3px; }
+
+#wp-admin-bar-tags .ab-icon:before {
+  content: "\f323";
+  top: 3px; }
+
+#wp-admin-bar-categories .ab-icon:before {
+  content: "\f318";
+  top: 3px; }
+
+#wp-admin-bar-featured_image.hide,
+#wp-admin-bar-status.hide,
+#wp-admin-bar-remove.hide,
+#wp-admin-bar-date.hide,
+#wp-admin-bar-tags.hide,
+#wp-admin-bar-categories.hide {
+  display: none; }
+
+.flatpickr-calendar {
+  font-family: "Lato", "PT Sans", arial; }
+  .flatpickr-calendar .flatpickr-time input {
+    font-family: "Lato", "PT Sans", arial;
+    background: transparent;
+    box-shadow: none;
+    border: 0;
+    border-radius: 0;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: inherit;
+    line-height: inherit;
+    cursor: pointer;
+    color: #393939;
+    font-size: 14px;
+    position: relative;
+    box-sizing: border-box; }
+
+.media-modal-content {
+  font-family: "Lato", "PT Sans", arial; }
+  .media-modal-content .button {
+    font-weight: normal;
+    text-transform: none; }
+  .media-modal-content .media-frame input:disabled,
+  .media-modal-content .media-frame textarea:disabled,
+  .media-modal-content .media-frame input[readonly],
+  .media-modal-content .media-frame textarea[readonly] {
+    background-color: #fff; }
+  .media-modal-content input {
+    background-color: #fff;
+    height: 30px; }
+
+#popup_dat_and_time.media-modal {
+  max-width: 600px;
+  margin: 0 auto;
+  max-height: 220px; }
+#popup_dat_and_time .media-modal-content {
+  min-height: 100px; }
+#popup_dat_and_time .media-frame-content {
+  top: 50px; }
+#popup_dat_and_time .setting-row {
+  display: block;
+  padding: 20px; }
+  #popup_dat_and_time .setting-row label {
+    display: inline-block;
+    margin: 0 20px 0 0; }
+  #popup_dat_and_time .setting-row input {
+    display: inline-block;
+    width: 100%; }
+
+#popup_tags.media-modal {
+  max-width: 600px;
+  margin: 0 auto;
+  max-height: 500px; }
+#popup_tags .media-modal-content {
+  min-height: 100px; }
+#popup_tags .media-frame-content {
+  top: 50px; }
+#popup_tags .setting-row {
+  display: block;
+  padding: 20px; }
+  #popup_tags .setting-row label {
+    display: inline-block;
+    margin: 0 20px 0 0; }
+  #popup_tags .setting-row input {
+    display: inline-block;
+    width: 100%; }
+#popup_tags #le_tags {
+  width: 90%; }
+#popup_tags .tag-check-list span {
+  margin-right: 7px; }
+#popup_tags .tag-check-list span a {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  position: relative; }
+  #popup_tags .tag-check-list span a:after, #popup_tags .tag-check-list span a:before {
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 1px;
+    background: #000;
+    position: absolute;
+    display: block;
+    top: -1px;
+    left: 5px;
+    z-index: 1; }
+  #popup_tags .tag-check-list span a:before {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg); }
+  #popup_tags .tag-check-list span a:after {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg); }
+  #popup_tags .tag-check-list span a:hover:after, #popup_tags .tag-check-list span a:hover:before {
+    background: red; }
+
+/*# sourceMappingURL=liveeditor.css.map */

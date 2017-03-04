@@ -1,0 +1,3 @@
+[
+    "{{ \\liveeditor\\LolitaFramework::baseDir }}/app/models/"
+]

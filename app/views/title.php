@@ -1,0 +1,1 @@
+<span <?php echo $attributes; ?>><?php echo $title; ?></span>

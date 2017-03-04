@@ -1,0 +1,19 @@
+{
+    "scripts" : [
+        ["jquery"],
+        ["wp-util"],
+        ["tinymce", "//cdn.tinymce.com/4/tinymce.min.js", ["jquery"], false, true],
+        ["cookie", "{{ \\LiveEditor\\LolitaFramework::baseUrl }}/app/assets/js/cookie.min.js", ["jquery"], false, true],
+        ["magnific-popup", "{{ \\LiveEditor\\LolitaFramework::baseUrl }}/app/assets/js/jquery.magnific-popup.min.js", ["jquery"], false, true],
+        ["flatpickr.min", "{{ \\LiveEditor\\LolitaFramework::baseUrl }}/app/assets/flatpick/flatpickr.min.js", ["jquery"], false, true],
+        ["live_editor", "{{ \\LiveEditor\\LolitaFramework::baseUrl }}/app/assets/js/live_editor.js", ["jquery", "cookie", "wp-util", "magnific-popup"], false, true]
+    ],
+    "styles" : [
+        ["live-editor", "{{ \\LiveEditor\\LolitaFramework::baseUrl }}/app/assets/css/liveeditor.css"],
+        ["fix-bug-with-icons", "{{ SITE_URL }}/wp-includes/css/dashicons.min.css?ver=4.4.2"],
+        ["font-awesome", "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"],
+        ["magnific-popup", "{{ \\LiveEditor\\LolitaFramework::baseUrl }}/app/assets/css/magnific-popup.css"],
+        ["flatpickr.min", "{{ \\LiveEditor\\LolitaFramework::baseUrl }}/app/assets/flatpick/flatpickr.min.css"],
+        ["font-lato", "https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"]
+    ]
+}

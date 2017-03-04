@@ -1,0 +1,5 @@
+[
+    ["the_title", ["\\LiveEditor\\ModelFilters", "filterTheTitle"], 10, 2],
+    ["the_content", ["\\LiveEditor\\ModelFilters", "filterTheContent"], 10, 1],
+    ["image_downsize", ["\\LiveEditor\\ModelFilters", "imageDownsize"], 10, 3]
+]
