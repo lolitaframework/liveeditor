@@ -147,7 +147,7 @@ class ModelActions
     {
         check_ajax_referer('Lolita Framework', 'nonce');
         $response = $_POST;
-        $result   = wp_delete_post($response['postId']);
+        $result   = wp_delete_post((int) $response['postId']);
         if (false === $result) {
             wp_send_json_error($response);
         }
@@ -162,9 +162,9 @@ class ModelActions
     {
         check_ajax_referer('Lolita Framework', 'nonce');
         $response = $_POST;
-        $post_id  = Arr::get($response, 'postId');
-        $attachment_id = Arr::get($response, 'attachmentId');
-        if ('' !== $post_id && '' !== $attachment_id) {
+        $post_id  = (int) Arr::get($response, 'postId');
+        $attachment_id = (int) Arr::get($response, 'attachmentId');
+        if (0 !== $post_id && 0 !== $attachment_id) {
             update_post_meta($post_id, '_thumbnail_id', $attachment_id);
             wp_send_json_success(array());
         }
